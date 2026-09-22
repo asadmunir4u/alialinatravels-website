@@ -1,0 +1,3 @@
+# Always revalidate so new deploys appear immediately (no stale cache)
+/*
+  Cache-Control: no-cache
