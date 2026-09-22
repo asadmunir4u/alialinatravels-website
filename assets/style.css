@@ -22,7 +22,7 @@
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{margin:0;font-family:var(--f-body);color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased;}
+body{margin:0;font-family:var(--f-body);color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 img{max-width:100%;display:block;}
 a{color:inherit;text-decoration:none;}
 h1,h2,h3{font-family:var(--f-head);font-weight:600;line-height:1.12;letter-spacing:-.5px;margin:0;}
@@ -109,9 +109,9 @@ header.scrolled .menu-btn span{background:var(--ink);}
 /* Search / enquiry bar */
 .searchbar{max-width:var(--maxw);margin:-46px auto 0;padding:0 24px;position:relative;z-index:5;}
 .searchbar-inner{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-lg);padding:22px;display:grid;grid-template-columns:repeat(3,1fr) auto;gap:14px;align-items:end;}
-.field{display:flex;flex-direction:column;gap:6px;text-align:left;}
+.field{display:flex;flex-direction:column;gap:6px;text-align:left;min-width:0;}
 .field label{font-size:.72rem;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);}
-.field input,.field select{border:1.5px solid var(--line);border-radius:var(--radius-sm);padding:12px 13px;font-family:inherit;font-size:.95rem;color:var(--ink);background:var(--cream);transition:border .2s;}
+.field input,.field select{width:100%;min-width:0;border:1.5px solid var(--line);border-radius:var(--radius-sm);padding:12px 13px;font-family:inherit;font-size:.95rem;color:var(--ink);background:var(--cream);transition:border .2s;}
 .field input:focus,.field select:focus{outline:none;border-color:var(--ocean);}
 .searchbar .btn{height:47px;padding:0 24px;white-space:nowrap;}
 
@@ -285,6 +285,8 @@ footer h4{color:#fff;font-family:var(--f-body);font-size:.82rem;letter-spacing:1
   .searchbar .btn{grid-column:1 / -1;justify-content:center;}
 }
 @media(max-width:720px){
+  .searchbar{margin-top:-30px;}
+  .searchbar-inner{grid-template-columns:1fr;}
   .navlinks,.nav-cta .btn-desktop{display:none;}
   .menu-btn{display:block;}
   .navlinks.open{display:flex;position:absolute;top:70px;left:16px;right:16px;flex-direction:column;align-items:flex-start;background:#fff;padding:22px;border-radius:var(--radius);box-shadow:var(--shadow-md);gap:18px;}
